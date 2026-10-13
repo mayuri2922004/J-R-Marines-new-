@@ -62,7 +62,7 @@ function setErr(k,msg){$(fields[k][0]).classList.toggle("err",!!msg);$(fields[k]
 const clearErr=()=>Object.keys(fields).forEach(k=>setErr(k,""));
 
 function openBid(b){
-  active=b;clearErr();
+  active=b;clearErr();$("#bidForm").reset();
   $("#mImg").src=b.image;$("#mImg").alt=b.name;$("#mType").textContent=b.type+" boat";
   $("#mName").textContent=b.name;$("#mDesc").textContent=b.desc;$("#mPrice").textContent=money(b.price);
   $("#mSpecs").innerHTML=[["Top speed",b.speed],["Motor",b.motor],["Hull",b.hull],["Battery",b.battery]].map(([k,v])=>`<div><b>${k}</b>${esc(v)}</div>`).join("");
