@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>J&R Marines | RC Boats</title>
+<meta name="description" content="High-performance remote control boats built for your next day on the water.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="promo">Free shipping on orders over $99</div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">J&amp;R <span>MARINES</span></a>
+    <nav><a href="#boats">Boats</a><a href="#why">Why J&amp;R</a><a href="#support">Support</a></nav>
+    <div class="hbtns">
+      <button class="hbtn" id="openCart" aria-label="Open cart">Cart <b id="count">0</b></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Make waves. Go faster.</h1>
+      <p>High-performance remote control boats, tested on real water and ready to run out of the box.</p>
+      <div class="actions"><a class="btn" href="#boats">Shop the fleet</a><a class="btn ghost" href="#why">Why J&amp;R</a></div>
+    </div>
+    <div class="hero-img"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4692-pNWJhV62zBSzsIMpf0UQaXTG6zDXcd.jpg" alt="Carbon fiber remote control racing boat"></div>
+  </div>
+  <svg class="wake" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true"><path d="M-80 60 C 160 10, 320 110, 560 60 S 960 10, 1200 60 S 1440 90, 1600 50 L1600 110 L-80 110Z"/></svg>
+</div>
+
+<div class="wrap">
+  <div class="trust">
+    <div><strong>Free shipping</strong><span>On orders over $99</span></div>
+    <div><strong>Waterproof electronics</strong><span>Built for the water</span></div>
+    <div><strong>Proven hull designs</strong><span>From first launch to race day</span></div>
+  </div>
+
+  <section id="boats" style="padding-top:20px">
+    <div class="head"><div><h2>Shop RC boats</h2><p>Find a boat that matches your water.</p></div></div>
+    <div class="tools">
+      <div class="filters" role="group" aria-label="Filter boats">
+        <button aria-pressed="true" data-f="all">All boats</button>
+        <button aria-pressed="false" data-f="Racing">Racing</button>
+        <button aria-pressed="false" data-f="Performance">Performance</button>
+        <button aria-pressed="false" data-f="Sport">Sport</button>
+        <button aria-pressed="false" data-f="Scale">Scale</button>
+      </div>
+      <input id="search" type="search" placeholder="Search boats" aria-label="Search boats">
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty">No boats match that search.</p>
+  </section>
+
+  <section id="why" style="padding-top:0">
+    <div class="feature">
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4541-JP6Iy0gmCUzlZvc1lEkmHCE07paSEX.jpg" alt="Remote control boat floating on water">
+      <div>
+        <h2>More than a boat. <em>Your next story.</em></h2>
+        <p>Waterproof electronics, proven hull designs, and the confidence to launch whenever inspiration strikes.</p>
+        <a class="btn" href="#boats">Pick your boat</a>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer id="support">
+  <div class="wrap">
+    <div><h3>J&amp;R MARINES</h3><p>Get out there.</p></div>
+    <div><a href="#boats">All boats</a><a href="#why">Our story</a></div>
+    <div><a href="#support">Contact support</a><a href="#support">Shipping &amp; returns</a></div>
+    <div><p>New boats and water-ready inspiration, occasionally.</p>
+      <form id="newsletter"><input type="email" placeholder="Your email address" required aria-label="Email address"><button class="btn">Sign up</button></form></div>
+  </div>
+</footer>
+
+
+<!-- CART DRAWER -->
+<div id="cartRoot">
+  <div class="shade" id="shade"></div>
+  <aside class="drawer" aria-label="Shopping cart">
+    <h2>Your cart</h2>
+    <div id="ship"></div>
+    <div class="bar"><i id="fill"></i></div>
+    <div id="items"></div>
+    <div class="total"><span>Total</span><span id="total">$0.00</span></div>
+    <button class="btn" id="checkout">Checkout</button>
+    <button class="btn ghost" id="closeCart" style="margin-top:8px">Keep shopping</button>
+  </aside>
+</div>
+
+<!-- BID MODAL -->
+<div class="modal" id="bidModal" aria-hidden="true" role="dialog" aria-labelledby="mTitle">
+  <div class="mbox">
+    <button class="mclose" id="mClose" aria-label="Close">&times;</button>
+    <div class="mgrid">
+      <div class="mprev">
+        <img id="mImg" src="" alt="">
+        <p class="type" id="mType" style="color:var(--signal);margin-top:12px"></p>
+        <h3 id="mName"></h3>
+        <p id="mDesc"></p>
+        <div class="mprice">Starting price<strong id="mPrice"></strong></div>
+        <div class="specs" id="mSpecs"></div>
+      </div>
+      <div class="mform">
+        <p class="type" style="margin-bottom:6px">Official Bidding &amp; Registration</p>
+        <h2 id="mTitle">Enter Your Bid</h2>
+        <p class="sub">Submit your details and register to place a bid on this boat.</p>
+        <form id="bidForm" novalidate>
+          <div class="fg"><label for="bName">Full Name <span aria-hidden="true">*</span></label><input id="bName" name="name" type="text" autocomplete="name" placeholder="John Doe" required><span class="ferr" id="eName"></span></div>
+          <div class="row2">
+            <div class="fg"><label for="bEmail">Email Address <span aria-hidden="true">*</span></label><input id="bEmail" name="email" type="email" autocomplete="email" placeholder="john@example.com" required><span class="ferr" id="eEmail"></span></div>
+            <div class="fg"><label for="bMobile">Mobile Number <span aria-hidden="true">*</span></label><input id="bMobile" name="mobile" type="tel" autocomplete="tel" placeholder="+1 (555) 000-0000" required><span class="ferr" id="eMobile"></span></div>
+          </div>
+          <div class="fg">
+            <label for="bAmount">Your Bidding Price ($ USD) <span aria-hidden="true">*</span> <small id="minHint" style="color:var(--muted)"></small></label>
+            <div class="bid-input-wrap"><span class="currency-prefix" aria-hidden="true">$</span><input id="bAmount" name="amount" type="number" step="0.01" placeholder="0.00" required></div><span class="ferr" id="eAmount"></span>
+            <p class="note"><span aria-hidden="true">⚠️</span> Bidding price must be equal to or higher than the boat's price (no lower prices accepted).</p>
+            <div class="qb"><span class="note">Quick add:</span>
+              <button type="button" data-add="10">+$10</button><button type="button" data-add="25">+$25</button>
+              <button type="button" data-add="50">+$50</button><button type="button" data-add="100">+$100</button></div>
+          </div>
+          <button class="btn" id="mSubmit" type="submit" style="width:100%">Submit Bid &amp; Register <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="success" id="mSuccess">
+          <div class="tick">✓</div><h3>Registration &amp; Bid Placed!</h3>
+          <p id="sMsg"></p><div class="sum" id="sSum"></div>
+          <button class="btn" id="mDone" type="button">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
